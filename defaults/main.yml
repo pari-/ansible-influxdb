@@ -24,7 +24,7 @@ influxdb_bin: "/usr/bin/influxd"
 influxdb_config_file: "/etc/influxdb/influxdb.conf"
 
 influxdb_config_reporting_disabled: "true"
-influxdb_config_hostname: "{{ ansible_fqdn }}"
+influxdb_config_hostname: "{{ ansible_hostname }}"
 
 influxdb_config_meta_dir: "/var/lib/influxdb/meta"
 influxdb_config_meta_retention_autocreate: "true"

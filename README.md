@@ -29,7 +29,7 @@ Available variables are listed below, along with default values (see defaults/ma
 - `influxdb_config_hostname`
 > description: If hostname (on the OS) doesn't return a name that can be resolved by the other systems in the cluster, you'll have to set the hostname to an IP or something that can be resolved here.
 >
-> default: "{{ ansible_fqdn }}"
+> default: "{{ ansible_hostname }}"
 
 - `influxdb_config_meta_dir` 
 > description: The meta directory. Files in the meta directory include meta.db.
