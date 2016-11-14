@@ -1,0 +1,7 @@
+---
+
+- name: write influxdb configuration
+  template: >
+    src=influxdb.conf.j2
+    dest="{{ influxdb_config_file }}"
+  notify: restart influxdb

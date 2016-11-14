@@ -1,0 +1,129 @@
+reporting-disabled = {{ influxdb_config_reporting_disabled }}
+hostname = "{{ influxdb_config_hostname }}"
+
+[meta]
+  dir = "{{ influxdb_config_meta_dir }}"
+  retention-autocreate = {{ influxdb_config_meta_retention_autocreate }}
+  logging-enabled = {{ influxdb_config_meta_logging_enabled }}
+
+[data]
+  dir = "{{ influxdb_config_data_dir }}"
+  wal-dir = "{{ influxdb_config_data_wal_dir }}"
+  trace-logging-enabled = {{ influxdb_config_data_trace_logging_enabled }}
+  query-log-enabled = {{ influxdb_config_data_query_log_enabled }}
+  cache-max-memory-size = {{ influxdb_config_data_cache_max_memory_size }}
+  cache-snapshot-memory-size = {{ influxdb_config_data_cache_snapshot_memory_size }}
+  cache-snapshot-write-cold-duration = "{{ influxdb_config_data_cache_snapshot_write_cold_duration }}"
+  compact-full-write-cold-duration = "{{ influxdb_config_data_compact_full_write_cold_duration }}"
+  max-series-per-database = {{ influxdb_config_data_max_series_per_database }}
+  max-values-per-tag = {{ influxdb_config_data_max_values_per_tag }}
+
+[coordinator]
+  write-timeout = "{{ influxdb_config_coordinator_write_timeout }}"
+  max-concurrent-queries = {{ influxdb_config_coordinator_max_concurrent_queries }}
+  query-timeout = "{{ influxdb_config_coordinator_query_timeout }}"
+  log-queries-after = "{{ influxdb_config_coordinator_log_queries_after }}"
+  max-select-point = {{ influxdb_config_coordinator_max_select_point }}
+  max-select-series = {{ influxdb_config_coordinator_max_select_series }}
+  max-select-buckets = {{ influxdb_config_coordinator_max_select_buckets }}
+
+[retention]
+  enabled = {{ influxdb_config_retention_enabled }}
+  check-interval = "{{ influxdb_config_retention_check_interval }}"
+
+[shard-precreation]
+  enabled = {{ influxdb_config_shard_precreation_enabled }}
+  check-interval = "{{ influxdb_config_shard_precreation_check_interval }}"
+  advance-period = "{{ influxdb_config_shard_precreation_advance_period }}"
+
+[monitor]
+  store-enabled = {{ influxdb_config_monitor_store_enabled }}
+  store-database = "{{ influxdb_config_monitor_store_database }}"
+  store-interval = "{{ influxdb_config_monitor_store_interval }}"
+
+[admin]
+  enabled = {{ influxdb_config_admin_enabled }}
+  bind-address = "{{ influxdb_config_admin_bind_address }}"
+  https-enabled = {{ influxdb_config_admin_https_enabled }}
+  https-certificate = "{{ influxdb_config_admin_https_certificate }}"
+
+[http]
+  enabled = {{ influxdb_config_http_enabled }}
+  bind-address = "{{ influxdb_config_http_bind_address }}"
+  auth-enabled = {{ influxdb_config_http_auth_enabled }}
+  realm = "{{ influxdb_config_http_realm }}"
+  log-enabled = {{ influxdb_config_http_log_enabled }}
+  write-tracing = {{ influxdb_config_http_write_tracing }}
+  pprof-enabled = {{ influxdb_config_http_pprof_enabled }}
+  https-enabled = {{ influxdb_config_http_https_enabled }}
+  https-certificate = "{{ influxdb_config_http_https_certificate }}"
+  https-private-key = "{{ influxdb_config_http_https_private_key }}"
+  shared-sercret = "{{ influxdb_config_http_shared_sercret }}"
+  max-row-limit = {{ influxdb_config_http_max_row_limit }}
+  max-connection-limit = {{ influxdb_config_http_max_connection_limit }}
+  unix-socket-enabled = {{ influxdb_config_http_unix_socket_enabled }}
+  bind-socket = "{{ influxdb_config_http_bind_socket }}"
+
+[subscriber]
+  enabled = {{ influxdb_config_subscriber_enabled }}
+  http-timeout = "{{ influxdb_config_subscriber_http_timeout }}"
+  insecure-skip-verify = {{ influxdb_config_subscriber_insecure_skip_verify }}
+  ca-certs = "{{ influxdb_config_subscriber_ca_certs }}"
+  write-concurrency = {{ influxdb_config_subscriber_write_concurrency }}
+  write-buffer-size = {{ influxdb_config_subscriber_write_buffer_size }}
+
+[[graphite]]
+  enabled = {{ influxdb_config_graphite_enabled }}
+  database = "{{ influxdb_config_graphite_database }}"
+  retention-policy = "{{ influxdb_config_graphite_retention_policy }}"
+  bind-address = "{{ influxdb_config_graphite_bind_address }}"
+  protocol = "{{ influxdb_config_graphite_protocol }}"
+  consistency-level = "{{ influxdb_config_graphite_consistency_level }}"
+  batch-size = {{ influxdb_config_graphite_batch_size }}
+  batch-pending = {{ influxdb_config_graphite_batch_pending }}
+  batch-timeout = "{{ influxdb_config_graphite_batch_timeout }}"
+  udp-read-buffer = {{ influxdb_config_graphite_udp_read_buffer }}
+  separator = "{{ influxdb_config_graphite_separator }}"
+  tags = {{ influxdb_config_graphite_tags }}
+  templates = {{ influxdb_config_graphite_templates }}
+
+[[collectd]]
+  enabled = {{ influxdb_config_collectd_enabled }}
+  bind-address = "{{ influxdb_config_collectd_bind_address }}"
+  database = "{{ influxdb_config_collectd_database }}"
+  retention-policy = "{{ influxdb_config_collectd_retention_policy }}"
+  typesdb = "{{ influxdb_config_collectd_typesdb }}"
+  security-level = "{{ influxdb_config_collectd_security_level }}"
+  auth-file = "{{ influxdb_config_collectd_auth_file }}"
+  batch-size = {{ influxdb_config_collectd_batch_size }}
+  batch-pending = {{ influxdb_config_collectd_batch_pending }}
+  batch-timeout = "{{ influxdb_config_collectd_batch_timeout }}"
+  read-buffer = {{ influxdb_config_collectd_read_buffer }}
+
+[[opentsdb]]
+  enabled = {{ influxdb_config_opentsdb_enabled }}
+  bind-address = "{{ influxdb_config_opentsdb_bind_address }}"
+  database = "{{ influxdb_config_opentsdb_database }}"
+  retention-policy = "{{ influxdb_config_opentsdb_retention_policy }}"
+  consistency-level = "{{ influxdb_config_opentsdb_consistency_level }}"
+  tls-enabled = {{ influxdb_config_opentsdb_tls_enabled }}
+  certificate = "{{ influxdb_config_opentsdb_certificate }}"
+  log-point-errors = {{ influxdb_config_opentsdb_log_point_errors }}
+  batch-size = {{ influxdb_config_opentsdb_batch_size }}
+  batch-pending = {{ influxdb_config_opentsdb_batch_pending }}
+  batch-timeout = "{{ influxdb_config_opentsdb_batch_timeout }}"
+
+[[udp]]
+  enabled = {{ influxdb_config_udp_enabled }}
+  bind-address = "{{ influxdb_config_udp_bind_address }}"
+  database = "{{ influxdb_config_udp_database }}"
+  retention-policy = "{{ influxdb_config_udp_retention_policy }}"
+  batch-size = {{ influxdb_config_udp_batch_size }}
+  batch-pending = {{ influxdb_config_udp_batch_pending }}
+  batch-timeout = "{{ influxdb_config_udp_batch_timeout }}"
+  read-buffer = {{ influxdb_config_udp_read_buffer }}
+
+[continuous_queries]
+  queries_enabled = {{ influxdb_config_continuous_queries_enabled }}
+  queries_log-enabled = {{ influxdb_config_continuous_queries_log_enabled }}
+  queries_run-interval = "{{ influxdb_config_continuous_queries_run_interval }}"

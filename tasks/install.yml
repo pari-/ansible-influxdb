@@ -1,0 +1,22 @@
+---
+
+- name: add key file
+  apt_key: >
+    id="{{ influxdb_install_apt_key_id }}"
+    url="{{ influxdb_install_apt_key_url }}"
+    state=present
+
+- name: add repo
+  apt_repository: >
+    repo="{{ influxdb_install_apt_repository_repo }}"
+    state=present
+    validate_certs="{{ influxdb_install_apt_repository_validate_certs }}"
+
+- name: install pkg
+  apt: >
+    name="{{ item }}"
+    state=present
+    update_cache="{{ influxdb_install_apt_update_cache }}"
+    cache_valid_time="{{ influxdb_install_apt_cache_valid_time }}"
+  with_items:
+    - "{{ influxdb_install_package_list }}"
