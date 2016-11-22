@@ -1,5 +1,10 @@
 ---
 
 - include: prerequisites.yml
+  tags: ['prerequisites']
+
 - include: install.yml
+  tags: ['install']
+
 - include: configure.yml
+  tags: ['install']
